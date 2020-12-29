@@ -1,6 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  _Text,
+} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import HomeScreen from './Screens/Home/Home';
+import SettingScreen from "./Screens/Settings/Settings";
+import MaintenanceScreen from "./Screens/Maintenance/Maintenance";
+
+const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
   const [outputText, setOutputText] = useState(
@@ -19,8 +34,8 @@ export default function App() {
           paddingHorizontal: 10,
         }}
       >
-        <Text style={{ fontSize: 16, color: "#FFF" }}>
-          Click to SCAN for available devices.
+        <Text style={{ marginTop: 20, fontSize: 16, color: "#FFF" }}>
+          Devices
         </Text>
         <View style={styles.scanButton}>
           <TouchableOpacity style={styles.roundButton1}>
@@ -30,14 +45,16 @@ export default function App() {
       </View>
       <View
         style={{
-          flex: 10,
-          backgroundColor: "white",
-          justifyContent: "center",
-          alignItems: "center",
+          flex: 12,
         }}
       >
-        <Image source={require("./Source/Icons/BLE_Icon.png")} style={{width:150,height:150,marginBottom:10}} />
-        <Text style={{margin:5, fontSize:18, color:'#A9A9A9'}}>No device found.</Text>
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Maintenance" component={MaintenanceScreen} />
+            <Tab.Screen name="Settings" component={SettingScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
       </View>
       <View style={{ flex: 1, backgroundColor: "skyblue" }} />
     </View>
@@ -55,7 +72,9 @@ const styles = StyleSheet.create({
   scanButton: {},
 
   scanText: {
-    alignSelf: "flex-start",
+    marginTop: 20,
+    alignSelf: "center",
+    //backgroundColor:'#FF00FF',
     color: "#FFF",
     fontSize: 20,
     fontWeight: "bold",
