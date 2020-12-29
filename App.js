@@ -11,7 +11,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import HomeScreen from './Screens/Home/Home';
+import HomeScreen from "./Screens/Home/Home";
 import SettingScreen from "./Screens/Settings/Settings";
 import MaintenanceScreen from "./Screens/Maintenance/Maintenance";
 
@@ -34,8 +34,8 @@ export default function App() {
           paddingHorizontal: 10,
         }}
       >
-        <Text style={{ marginTop: 20, fontSize: 16, color: "#FFF" }}>
-          Devices
+        <Text style={{paddingHorizontal:10, marginTop: 20, fontSize: 16, color: "#FFF" }}>
+          Discover and configurate !
         </Text>
         <View style={styles.scanButton}>
           <TouchableOpacity style={styles.roundButton1}>
