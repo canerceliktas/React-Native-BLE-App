@@ -1,5 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Component, useState } from "react";
+import { DeviceList } from "../../Components/DeviceList";
+import { CircleSensView } from "../../Components/CircleSensView";
 import {
   StyleSheet,
   Text,
@@ -19,13 +21,17 @@ export default function MaintenanceScreen() {
       style={{
         flex: 1,
         backgroundColor: "white",
-        justifyContent: "center",
         alignItems: "center",
+        flexDirection: "column",
       }}
     >
-      <Text style={{ margin: 5, fontSize: 18, color: "#A9A9A9" }}>
-        This is Maintenance screen.
-      </Text>
+      <View style={{ flex: 1 }}>
+        <CircleSensView />
+      </View>
+
+      <View style={{ flex: 3, marginVertical:10, backgroundColor: "#FF00FF" }}>
+        <Text>ikinci view</Text>
+      </View>
     </View>
   );
 }

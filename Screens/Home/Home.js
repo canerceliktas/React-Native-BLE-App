@@ -10,10 +10,6 @@ import {
 } from "react-native";
 
 export default function HomeScreen() {
-  const [outputText, setOutputText] = useState(
-    "Open up App.js to start working on your app!"
-  );
-
   return (
     <View
       style={{
