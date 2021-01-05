@@ -17,20 +17,13 @@ export default function MaintenanceScreen() {
   );
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "white",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <View style={{ flex: 1 }}>
-        <CircleSensView />
+    <View style={styles.container}>
+      <View style={styles.inner}>
+        <CircleSensView/>
+        <Text numberOfLines={0} style={{marginVertical:2}} >Sensor Alignment</Text>
       </View>
-
-      <View style={{ flex: 3, marginVertical:10, backgroundColor: "#FF00FF" }}>
-        <Text>ikinci view</Text>
+      <View style={styles.inner2}>
+      <Text numberOfLines={0} style={{marginVertical:2}} >Sensor Alignment</Text>
       </View>
     </View>
   );
@@ -39,27 +32,25 @@ export default function MaintenanceScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#14F4FC",
-    alignItems: "center",
-    justifyContent: "center",
+    padding:"1%",
+    backgroundColor:"white",
+    alignItems:"center",
+    flexDirection:"column"    
   },
 
-  scanButton: {},
+  inner:{
+    flex:1,
 
-  scanText: {
-    marginTop: 20,
-    alignSelf: "center",
-    //backgroundColor:'#FF00FF',
-    color: "#FFF",
-    fontSize: 20,
-    fontWeight: "bold",
+    marginBottom:"5%",  
+    padding:"2%", 
   },
+  inner2:{
+    flex:3,
+    flexDirection:"row",
+    alignSelf:"auto",    
+    backgroundColor:"#eee",
+    alignItems:"center",
+    marginVertical:5
+  }
 
-  roundButton1: {
-    width: 75,
-    height: 75,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-  },
 });
