@@ -21,12 +21,14 @@ export default function MaintenanceScreen() {
     "Open up App.js to start working on your app!"
   );
 
-    const DeviceParameter = [{key:1, title:"Motor Operation Time", description: "2 hour 5 minutes"},
-    {key:2, title:"Light 1 Operation Time", description: "5 hour 2 minutes"},
-    {key:3, title:"Light 2 Operation Time", description: "1 hour 23 minutes"},
-    {key:4, title:"Motor Operation Cycle", description: "365"},
-    {key:5, title:"Light 1 Operation Cycle", description: "1545"},
-    {key:6, title:"Light 2 Operation Cycle", description: "762"},  ];
+     DeviceParameter = [
+     {key:1, title:"Motor Operation Time", description: "2 hour 5 minutes"},
+     {key:2, title:"Light 1 Operation Time", description: "5 hour 2 minutes"},
+     {key:3, title:"Light 2 Operation Time", description: "1 hour 23 minutes"},
+     {key:4, title:"Motor Operation Cycle", description: "365"},
+     {key:5, title:"Light 1 Operation Cycle", description: "1545"},
+     {key:6, title:"Light 2 Operation Cycle", description: "762"},  
+  ];
         
 
   return (
