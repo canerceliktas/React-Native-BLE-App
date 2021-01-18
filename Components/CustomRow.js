@@ -35,8 +35,7 @@ const styles = StyleSheet.create({
 });
 
 const CustomRow = ({ title, description, image_url }) => (
-    <View style={styles.container}>
-        <Image source={{ uri: image_url }} style={styles.photo} />
+    <View style={styles.container}>    
         <View style={styles.container_text}>
             <Text style={styles.title}>
                 {title}
